@@ -1,0 +1,15 @@
+@import 'battle';
+@import 'heroes';
+@import 'hero-selector';
+@import 'leaderboards';
+@import 'reset';
+
+.top-banner {
+
+  h1 {
+    font-weight: bold;
+    font-size: 2em;
+    width: 100%;
+    padding: .25em;
+  }
+}
