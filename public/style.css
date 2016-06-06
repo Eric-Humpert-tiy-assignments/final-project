@@ -1,0 +1,118 @@
+.start-battle-container {
+  border-top: 2px solid #FFF; }
+
+.start-battle-button a {
+  background-color: #F0141E;
+  border-radius: 25px;
+  bottom: 0;
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 1em;
+  padding: .5em 1em;
+  position: fixed;
+  text-decoration: none; }
+
+body {
+  color: #FFF;
+  font-family: sans-serif; }
+
+#heroLabel {
+  float: left;
+  font-size: 1.75em; }
+
+#countLabel {
+  float: right;
+  font-size: 1.75em; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.button, .home-page .nav-options a, .top-banner .return-button, .home-page h1 .return-button {
+  background-color: #F0141E;
+  border-radius: 25px;
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 1em;
+  padding: .5em 1em; }
+
+body {
+  background-color: #00F; }
+
+.home-page h1 {
+  font-weight: bold;
+  font-size: 3.5em;
+  padding: .25em 1em;
+  text-align: center; }
+
+.home-page .nav-options {
+  position: fixed;
+  bottom: 30px;
+  margin: 0 auto;
+  width: 100%; }
+  .home-page .nav-options a {
+    display: inline-block;
+    float: left;
+    text-decoration: none; }
+
+.top-banner, .home-page h1 {
+  background-color: #00F;
+  border-bottom: 2px solid #FFF;
+  color: #FFF;
+  font-family: sans-serif;
+  overflow: auto; }
+  .top-banner h1, .home-page h1 h1 {
+    float: left;
+    font-weight: bold;
+    font-size: 2em;
+    padding: .25em; }
+  .top-banner .return-button, .home-page h1 .return-button {
+    float: right;
+    text-decoration: none; }
