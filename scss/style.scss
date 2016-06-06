@@ -17,20 +17,30 @@ $text-color: #FFF;
   font-size: 1.5em;
   font-style: italic;
   margin: 1em;
-  padding: .5em;
+  padding: .5em 1em;
 }
 
-
+body {
+  background-color: #00F;
+}
 
 .home-page {
+
+
+
   h1 {
     @extend .top-banner;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 3.5em;
+    padding: .25em 1em;
     text-align: center;
   }
 
   .nav-options {
+    position: fixed;
+    bottom: 30px;
+    margin: 0 auto;
+    width: 100%;
 
     a {
       @extend .button;
@@ -45,13 +55,15 @@ $text-color: #FFF;
 
 .top-banner {
   background-color: #00F;
+  border-bottom: 2px solid #FFF;
   color: $text-color;
+  font-family: sans-serif;
   overflow: auto;
 
   h1 {
+    float: left;
     font-weight: bold;
     font-size: 2em;
-    margin: 0 auto;
     padding: .25em;
   }
 
