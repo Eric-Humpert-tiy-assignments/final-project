@@ -9,22 +9,17 @@
     <div class="top-banner"><h1>Select Your Hero</h1><a class="return-button" href="index.html">Return</a></div>
 
     <div class="start-battle-container">
-      <div id="hero-box">
-        <h1 id="hero-name"></h1>
-        <img id="hero-image"/>
-        <span id="hero-hp"></span>
-        <button id="group-attack-button">Group Attack!</button>
-      </div>
-      <div id="villain-box">
-        <h1 id="villain-name"></h1>
-        <img id="villain-image"/>
-        <span id="villain-hp"></span>
-      </div>
+
       <div class='arenaBottom'><button href="battle.html">Begin Battle!</button></div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone.js"></script>
+    <script type="text/html" id="hero-template">
+      <li>
+        <span class="hero-name"> <%= name %></span>
+        <img class="hero-image" src="<%= thumbnail %>"/>
+      </li>
+    </script>
+
+
   </body>
 </html>
