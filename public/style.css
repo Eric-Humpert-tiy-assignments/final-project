@@ -84,7 +84,8 @@ table {
   padding: .5em 1em; }
 
 body {
-  background-color: #00F; }
+  background-color: #00F;
+  font-family: sans-serif; }
 
 .home-page h1 {
   font-weight: bold;
