@@ -1,5 +1,7 @@
-.start-battle-container {
+.hero-selector-container {
   border-top: 2px solid #FFF; }
+  .hero-selector-container ul {
+    text-decoration: none; }
 
 .start-battle-button a {
   background-color: #F0141E;
@@ -102,6 +104,11 @@ body {
     display: inline-block;
     float: left;
     text-decoration: none; }
+
+.home-page footer {
+  position: fixed;
+  bottom: 5px;
+  left: 10px; }
 
 .top-banner, .home-page h1 {
   background-color: #00F;

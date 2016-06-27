@@ -1,5 +1,4 @@
 @import 'battle';
-@import 'heroes';
 @import 'hero-selector';
 @import 'leaderboards';
 @import 'reset';
@@ -27,8 +26,6 @@ body {
 
 .home-page {
 
-
-
   h1 {
     @extend .top-banner;
     font-weight: bold;
@@ -50,9 +47,13 @@ body {
       text-decoration: none;
     }
   }
+
+  footer {
+    position: fixed;
+    bottom: 5px;
+    left: 10px;
+  }
 }
-
-
 
 .top-banner {
   background-color: #00F;
