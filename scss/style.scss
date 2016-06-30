@@ -1,6 +1,6 @@
 @import 'battle';
 @import 'hero-selector';
-@import 'leaderboards';
+@import 'results';
 @import 'reset';
 
 
@@ -24,6 +24,7 @@ body {
   font-family: sans-serif;
 }
 
+
 .home-page {
 
   h1 {
@@ -39,6 +40,10 @@ body {
     bottom: 30px;
     margin: 0 auto;
     width: 100%;
+
+    .hidden {
+      display: none;
+    }
 
     a {
       @extend .button;

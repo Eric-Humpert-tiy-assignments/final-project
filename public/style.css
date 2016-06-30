@@ -100,6 +100,8 @@ body {
   bottom: 30px;
   margin: 0 auto;
   width: 100%; }
+  .home-page .nav-options .hidden {
+    display: none; }
   .home-page .nav-options a {
     display: inline-block;
     float: left;

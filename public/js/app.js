@@ -1,15 +1,20 @@
-if (window.GameRouting === undefined) {
-    window.GameRouting = {};
+if (window.Routing === undefined) {
+    window.Routing = {};
 }
 
 (function(context) {
 
+    var $viewContainer = $("#view-container");
+
+    var mainView = new context.MainView( { el: $viewContainer });
 
     var gameRoutes = Backbone.Router.extend({
 
         routes: {
-            'main-page': 'main',
-            'hero-page': 'hero',
+            'main-view': 'main',
+            'hero-view': 'hero',
+            'battle-view': 'battle',
+            'leaderboard-view': 'leaderboard'
 
         },
 
@@ -19,7 +24,14 @@ if (window.GameRouting === undefined) {
 
         hero: function() {
             $viewContainer.empty().append(heroView.render().el);
-        }
-    })
+        },
 
-})(window.GameRouting);
+        leaderboard: function() {
+            $viewContainer.empty().append(leaderboardView.render().el);
+        }
+    });
+
+    var routes = context.gameRoutes = new gameRoutes();
+    Backbone.history.start();
+
+})(window.Routing);
