@@ -1,11 +1,25 @@
-if (this.comicSearch === undefined) this.comicSearch = {};
+if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
 (function(context) {
 
-    var input = $("#input-box");
+    var DataGrabber = Backbone.View.extend({
+
+    events: {
+      "change input#query-box": "nameSearch",
+    },
+
+    initialize: function() {
+
+    },
+
+    nameSearch: function(evt) {
+
+    var input = $("#query-box").val();
     var codeFriendlyinput;
 
-    function start() {
+
+        console.log(input);
+        //codeFriendlyinput = encodeURIComponent(input);
 
         $.ajax({
             url: "http://gateway.marvel.com:80/v1/public/characters?" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339",
@@ -13,6 +27,7 @@ if (this.comicSearch === undefined) this.comicSearch = {};
 
         console.log("http://gateway.marvel.com:80/v1/public/characters?" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339");
     }
-    context.start = start;
 
+    });
+    context.DataGrabber = DataGrabber;
 })(window.comicSearch);
