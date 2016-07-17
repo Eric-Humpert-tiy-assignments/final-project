@@ -1,25 +1,8 @@
-if (window.GameRouting === undefined) {
-    window.GameRouting = {};
-}
+if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
 (function(context) {
 
+  var mainView = new context.MainView({ el: $("#view-container")});
+  var dataUrlBuilder = new context.DataGrabber({ el: $("#view-container")});
 
-    var gameRoutes = Backbone.Router.extend({
-
-        routes: {
-            'main-page': 'main',
-            'hero-page': 'hero',
-
-        },
-
-        main: function() {
-            $viewContainer.empty().append(mainView.render().el);
-        },
-
-        hero: function() {
-            $viewContainer.empty().append(heroView.render().el);
-        }
-    })
-
-})(window.GameRouting);
+})(window.comicSearch);
