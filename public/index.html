@@ -8,22 +8,28 @@
     <div class="home-page">
       <h1>Marvelous Hero Comic Search!</h1>
       <img>
+    <!-- User input element for searching the API -->
       <input id="query-box" type="text">
 
+    <!-- backbone view container element -->
       <div id="view-container">
+        <ul id="query-results">
+        </ul>
       </div>
 
     </div>
-
+    <!-- Data attribution statement for API use -->
     <footer>
       <h2>Data provided by Marvel. &#169; 2016 Marvel</h2>
     </footer>
 
-    <script type="text/html" id="hero-template">
+    <!-- template function for the list items to be generated -->
+    <script type="text/html" id="result-template">
       <li>
-        <img class="hero-image" src="<%= image %>">
-        <h2 class="hero-name"> <%= name %></h2>
+        <p class="comic-name"><a href="<%= resourceURI %>" ><%= name %></a></p>
       </li>
+
+    <!-- CDN and javascript file linkup tags -->
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
