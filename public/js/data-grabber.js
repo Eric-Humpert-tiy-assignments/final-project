@@ -9,7 +9,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     initialize: function() {
-
+      console.log("Are you ready for this jelly?")
     },
 
     nameSearch: function(evt) {
