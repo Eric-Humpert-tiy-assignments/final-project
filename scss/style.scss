@@ -1,7 +1,3 @@
-@import 'battle';
-@import 'heroes';
-@import 'hero-selector';
-@import 'leaderboards';
 @import 'reset';
 
 
@@ -22,11 +18,11 @@ $text-color: #FFF;
 
 body {
   background-color: #00F;
+  color: $text-color;
+  font-family: sans-serif;
 }
 
 .home-page {
-
-
 
   h1 {
     @extend .top-banner;
@@ -36,22 +32,12 @@ body {
     text-align: center;
   }
 
-  .nav-options {
+  footer {
     position: fixed;
-    bottom: 30px;
-    margin: 0 auto;
-    width: 100%;
-
-    a {
-      @extend .button;
-      display: inline-block;
-      float: left;
-      text-decoration: none;
-    }
+    bottom: 5px;
+    left: 10px;
   }
 }
-
-
 
 .top-banner {
   background-color: #00F;
