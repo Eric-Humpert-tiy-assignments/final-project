@@ -5,19 +5,20 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     var DataGrabber = Backbone.View.extend({
 
     events: {
-      "change input#query-box": "nameSearch",
+      "keyup #query-box": "heroQuery",
     },
 
-    initialize: function() {
-      console.log("Are you ready for this jelly?")
-    },
+    heroQuery: function(evt) {
 
-    nameSearch: function(evt) {
+      var query = this;
 
-    var input = $("#query-box").val();
-    var codeFriendlyinput;
+      if (evt.keycode === 13) {
+        var input = query.$("#query-box").val();
 
+        console.log(input);
 
+      }
+    /*
         console.log(input);
         //codeFriendlyinput = encodeURIComponent(input);
 
@@ -26,6 +27,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
         })
 
         console.log("http://gateway.marvel.com:80/v1/public/characters?" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339");
+    */
     }
 
     });
