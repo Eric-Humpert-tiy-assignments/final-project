@@ -26,8 +26,19 @@ if (window.comicSearch === undefined) {
                 });
 
                 //when the data request finishes a console log to display the resulting comic data
-                result.done(function(comics) {
-                    console.log("query result:", comics);
+                result.done(function(coolStuff) {
+                  console.log("Got the data:", coolStuff);
+                  for (var j = 0; j < coolStuff.data.results.length; j++) {
+
+                  var coolStuffArray = coolStuff.data.results[j].comics.items;
+                    console.log("query result:", coolStuffArray);
+
+                    //console.log("list item bits:", coolStuffArray);
+                    for (var i = 0; i < coolStuffArray.length; i++) {
+                      console.log("The list stuff:", coolStuffArray[i]);
+                      //this.model.buildComicList(coolStuffArray[i]);
+                    }
+                  }
                 })
 
             }

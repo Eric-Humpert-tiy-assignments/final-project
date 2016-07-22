@@ -6,7 +6,17 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
       defaults: {
         name: "",
-        requestURI: "",
+        requestURI: ""
+      },
+
+      initialize: function() {
+        this.set('comicsData', [])
+      },
+
+      buildComicList: function(comic) {
+        var comicList = this.get("comicsData");
+        comicList.push(comic);
+        this.set("comicsData", comicList)
       }
 
   });
