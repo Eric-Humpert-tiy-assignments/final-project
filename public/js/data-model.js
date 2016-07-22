@@ -8,6 +8,11 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
       intialize: function() {
       },
 
+      defaults: {
+        name: "",
+        requestURI: ""
+      }
+
   });
   context.DataModel = DataModel;
 
