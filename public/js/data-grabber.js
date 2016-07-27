@@ -1,10 +1,10 @@
-if (window.comicSearch === undefined) {
-    window.comicSearch = {};
-}
+if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
 (function(context) {
 
     var DataGrabber = Backbone.View.extend({
+        tagName: "ul",
+
         //Event pair declaration
         events: {
             "keyup input": "grabHeroData",
@@ -12,11 +12,10 @@ if (window.comicSearch === undefined) {
 
         //Grab Hero Data function
         grabHeroData: function(evt) {
-            console.log("Grab hero name fires");
             if (evt.keyCode === 13) {
-                var heroName = this.$("#query-box").val();
-                console.log(heroName);
-
+                var heroName = $("#query-box").val();
+                //console.log("Got the character name: ", heroName);
+                //console.log("checking what the this keyword is: ", this);
                 //Variable to make the input able to be used with the ajax request.
                 var codeFriendlyinput = encodeURIComponent(heroName);
 
@@ -28,15 +27,19 @@ if (window.comicSearch === undefined) {
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
                   console.log("Got the data:", coolStuff);
+                  //console.log("checking what the this keyword is try 2: ", this);
                   for (var j = 0; j < coolStuff.data.results.length; j++) {
 
-                  var coolStuffArray = coolStuff.data.results[j].comics.items;
-                    console.log("query result:", coolStuffArray);
+                  comicCollection = coolStuff.data.results[j].comics.items;
+                    //console.log("checking what the this keyword is try 3", this);
+                    //console.log("query result:", coolStuffArray);
 
                     //console.log("list item bits:", coolStuffArray);
-                    for (var i = 0; i < coolStuffArray.length; i++) {
-                      console.log("The list stuff:", coolStuffArray[i]);
-                      //this.model.buildComicList(coolStuffArray[i]);
+                    for (var item in comicCollection) {
+                      console.log("The list items:", comicCollection[item]);
+                      console.log(this.models);
+                      //this.models.buildComicList(comicCollection[item].item);
+                      //this.buildComicList("requestURI", coolStuffArray[item].requestURI);
                     }
                   }
                 })
