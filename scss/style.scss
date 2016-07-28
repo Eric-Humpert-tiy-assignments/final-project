@@ -4,18 +4,6 @@
 $colorBack: #F0141E;
 $text-color: #FFF;
 
-
-.button {
-  background-color: $colorBack;
-  border-radius: 25px;
-  color: $text-color;
-  font-family: sans-serif;
-  font-size: 1.5em;
-  font-style: italic;
-  margin: 1em;
-  padding: .5em 1em;
-}
-
 body {
   background-color: #00F;
   color: $text-color;
@@ -53,9 +41,4 @@ body {
     padding: .25em;
   }
 
-  .return-button {
-    @extend .button;
-    float: right;
-    text-decoration: none;
-  }
 }
