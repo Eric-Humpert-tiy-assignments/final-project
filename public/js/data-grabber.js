@@ -23,11 +23,12 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
         //Grab Hero Data function
         grabHeroData: function(evt) {
             if (evt.keyCode === 13) {
-                var heroName = $("#query-box").val();
+                var charName = $("#query-box").val();
+                var charPic;
                 //console.log("Got the character name: ", heroName);
                 //console.log("checking what the this keyword is: ", this);
                 //Variable to make the input able to be used with the ajax request.
-                var codeFriendlyinput = encodeURIComponent(heroName);
+                var codeFriendlyinput = encodeURIComponent(charName);
 
                 //ajax request variable
                 var result = $.ajax({
@@ -37,6 +38,8 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
                   console.log("Got the data:", coolStuff);
+                  console.log("character image: " + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
+                  charPic = ( coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
                   //console.log("checking what the this keyword is try 2: ", this);
                   for (var j = 0; j < coolStuff.data.results.length; j++) {
 

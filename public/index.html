@@ -15,10 +15,12 @@
       <div id="input-container">
       <!-- User input element for searching the API -->
         <input id="query-box" type="text">
+        <div id="image-container">
         <p>When entering a character there's strict conditions for example searching for Captain Marvel Carol Danvers it has to be "Captain Marvel (Carol Danvers)" and "Doctor Doom" instead of "Dr Doom."</p>
       </div>
 
       <div id="results-container">
+
         <ul id="query-results">
         </ul>
       </div>
@@ -34,7 +36,11 @@
       <li>
         <h3 class="comic-name"><a href="<%= resourceURI %>" ><%= name %></a></h3>
       </li>
+    </script>
 
+    <script type="text/html" id="image-template">
+      <img src=" <%= charPic %>" />
+    </script>
     <!-- CDN and javascript file linkup tags -->
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
