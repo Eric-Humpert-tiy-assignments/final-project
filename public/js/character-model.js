@@ -2,14 +2,14 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
 (function(context) {
 
-    var ComicModel = Backbone.Model.extend({
+    var CharacterModel = Backbone.Model.extend({
 
       defaults: {
         name: "",
-        RequestURI: ""
+        charPic: ""
       }
 
   });
-  context.ComicModel = ComicModel;
+  context.CharacterModel = CharacterModel;
 
 })(window.comicSearch);

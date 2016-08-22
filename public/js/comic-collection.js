@@ -9,11 +9,11 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     arrangeComicData: function(model) {
-
+      this.render();
     },
 
     render: function() {
-      
+      console.log("Can you see this collection?");
     }
   });
   context.ComicCollection = ComicCollection;

@@ -16,15 +16,16 @@ if (window.comicSearch === undefined) {
 
             _.bindAll(this, 'grabHeroData', 'render', 'templateFunc');
             //This is something you made progress with today!
-            this.model = new context.ComicModel();
+            this.model = new context.CharacterModel();
+            this.listenTo(this.model, "change", this.render);
             console.log("model check:",this.model);
         },
 
         render: function() {
-            var $displayArea = this.$("#image-container");
-            $displayArea.html(templateFunc(this.model.get(charPic)));
-            this.model.get(charPic)
-            return this;
+            var self = this;
+            var template = _.template($("#image-template").html(), {charPic: this.model.get("charPic")});
+
+            return self;
         },
 
         //Grab Hero Data function
@@ -47,16 +48,17 @@ if (window.comicSearch === undefined) {
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
 
-                    //console.log("Got the data:", coolStuff);
+                    console.log("Got the data:", coolStuff);
                     //console.log check for building the character thumbnail image link
                     console.log("character image: " + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
                     console.log("this check:", self);
                     console.log("model check:", self.model);
                     //set the attribute of the model to the link that is the character image from the API
                     self.model.set({
+                        name: (coolStuff.data.results[0].name),
                         charPic: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
-
+                    $('#results-container').append('<img width=252px href=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
 
 
                     //set up the collection to use the data I need to populate the search results list
@@ -65,6 +67,7 @@ if (window.comicSearch === undefined) {
 
                     //console.log("list item bits:", coolStuffArray);
                     for (var item in comicCollection) {
+                        $('#query-results').append('<li>' + comicCollection[item].name + '</li>');
                         console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
 
                     }
