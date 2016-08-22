@@ -35,10 +35,10 @@ if (window.comicSearch === undefined) {
             if (evt.keyCode === 13) {
                 var charName = $("#query-box").val();
                 var charPic;
+                var codeFriendlyinput = encodeURIComponent(charName);
                 //console.log("Got the character name: ", heroName);
                 //console.log("checking what the this keyword is: ", this);
                 //Variable to make the input able to be used with the ajax request.
-                var codeFriendlyinput = encodeURIComponent(charName);
 
                 //ajax request variable
                 var result = $.ajax({
@@ -48,7 +48,7 @@ if (window.comicSearch === undefined) {
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
 
-                    console.log("Got the data:", coolStuff);
+                    //console.log("Got the data:", coolStuff);
                     //console.log check for building the character thumbnail image link
                     console.log("character image: " + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
                     console.log("this check:", self);
@@ -58,7 +58,7 @@ if (window.comicSearch === undefined) {
                         name: (coolStuff.data.results[0].name),
                         charPic: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
-                    $('#results-container').append('<img width=252px href=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
+                    $('#input-container').append('<img src=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
 
 
                     //set up the collection to use the data I need to populate the search results list
