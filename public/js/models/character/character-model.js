@@ -6,7 +6,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
       defaults: {
         name: "",
-        charPic: ""
+        characterImage: ""
       }
 
   });

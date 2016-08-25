@@ -56,9 +56,9 @@ if (window.comicSearch === undefined) {
                     //set the attribute of the model to the link that is the character image from the API
                     self.model.set({
                         name: (coolStuff.data.results[0].name),
-                        charPic: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
+                        characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
-                    $('#input-container').append('<img src=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
+                    $('#image-container').append('<img src=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
 
 
                     //set up the collection to use the data I need to populate the search results list
@@ -67,7 +67,7 @@ if (window.comicSearch === undefined) {
 
                     //console.log("list item bits:", coolStuffArray);
                     for (var item in comicCollection) {
-                        $('#query-results').append('<li>' + comicCollection[item].name + '</li>');
+                        $('#query-results').append('<a href=' + comicCollection[item].resourceURI + '><li>' + comicCollection[item].name + '</li></a>');
                         console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
 
                     }
