@@ -6,7 +6,9 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
       defaults: {
         name: "",
-        RequestURI: ""
+        resourceURI: "",
+        comicCoverImage: "",
+        description: ""
       }
 
   });
