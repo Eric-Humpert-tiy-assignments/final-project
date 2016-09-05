@@ -54,15 +54,13 @@ if (window.comicSearch === undefined) {
                         name: (coolStuff.data.results[0].name),
                         characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
-                    $('#image-container').append('<img src=' + (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg") + '/>')
+                    $('#image-container').append('<img src=' + self.model.get(characterImage) + "/portrait_fantastic.jpg" + '/>')
 
                     //set up the collection to use the data I need to populate the search results list
                     comicCollection = coolStuff.data.results[0].comics.items;
-                    //console.log("query result:", coolStuffArray);
 
-                    //console.log("list item bits:", coolStuffArray);
                     for (var item in comicCollection) {
-                        $('#query-results').append('<a href=' + comicCollection[item].resourceURI + "/&apikey=1103dc5941f198d7daedd7998113e339" + '><li>' + comicCollection[item].name + '</li></a>');
+                        $('#query-results').append('<a href=' + comicCollection[item].resourceURI + "&apikey=1103dc5941f198d7daedd7998113e339" + '><li>' + comicCollection[item].name + '</li></a>');
                         console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
 
                     }
