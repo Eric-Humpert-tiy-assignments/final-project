@@ -44,3 +44,48 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background-color: #111;
+  color: #EEE;
+  font-family: sans-serif;
+  margin: 0 50px 0 50px;
+  outline: solid yellow 2px; }
+
+.home-page {
+  background-color: #444;
+  outline: solid 1px blue; }
+
+#input-container {
+  overflow: auto; }
+  #input-container p {
+    float: left; }
+  #input-container #query-box {
+    float: right;
+    background-color: #444;
+    border: solid 2px #DDD;
+    color: #DDD;
+    font-size: 2em;
+    margin: 1em 2em 1em 0;
+    padding: .3em;
+    outline: solid 1px white; }
+
+header {
+  background-color: #C11;
+  font-size: 4em;
+  font-weight: 700;
+  padding: .25em .5em;
+  text-align: center; }
+
+footer {
+  background-color: #333;
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: .5em;
+  overflow: auto;
+  text-align: center; }
