@@ -53,7 +53,8 @@ footer {
 #results {
   h2 {
     @extend .banner;
-    color: #DDD;
+    background-color: #EEE;
+    color: #222;
     font-size: 2em;
     font-weight: 400;
   }
