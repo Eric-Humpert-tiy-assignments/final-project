@@ -55,6 +55,7 @@ if (window.comicSearch === undefined) {
                         characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
                     $('#image-container').append('<img src=' + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg" + '>')
+                    $('.title-banner').append("<h2> Here are the comics " + coolStuff.data.results[0].name + " appears in.</h2>")
 
                     //set up the collection to use the data I need to populate the search results list
                     comicCollection = coolStuff.data.results[0].comics.items;

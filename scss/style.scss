@@ -1,55 +1,73 @@
 @import 'reset';
-
 body {
-  background-color: #111;
-  color: #EEE;
-  font-family: sans-serif;
-  margin: 0 50px 0 50px;
-  outline: solid yellow 2px;
-
+    background-color: #111;
+    color: #EEE;
+    font-family: sans-serif;
+    margin: 0 50px;
+    a {
+        color: #CCC;
+        text-decoration: none;
+    }
 }
-
+header {
+    font-size: 4em;
+    font-weight: 700;
+    @extend .banner;
+}
+footer {
+    background-color: #333;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 0.5em;
+    overflow: auto;
+    text-align: center;
+}
 .home-page {
-  background-color: #444;
-  outline: solid 1px blue;
-}
-
-
-
-#input-container {
-  p {
-    float: left;
-  }
-
-  #query-box {
-    float: right;
     background-color: #444;
-    border: solid 2px #DDD;
+}
+.banner {
+    background-color: #C11;
+    padding: 0.25em 0.5em;
+    overflow: auto;
+    text-align: center;
+}
+.hidden {
+  display: none;
+}
+#input-container {
+    p {
+        float: left;
+    }
+    #query-box {
+        float: right;
+        background-color: #444;
+        border: solid 2px #DDD;
+        color: #DDD;
+        font-size: 2em;
+        margin: 1em 2em 1em 0;
+        padding: 0.3em;
+        outline: solid 1px white;
+    }
+    overflow: auto;
+}
+#results {
+  h2 {
+    @extend .banner;
     color: #DDD;
     font-size: 2em;
-    margin: 1em 2em 1em 0;
-    padding: .3em;
-    outline: solid 1px white;
+    font-weight: 400;
   }
-  overflow: auto;
+    #query-results {
+        background-color: #555;
+        padding: 2em;
+        li {
+            background-color: #777;
+            font-size: 30px;
+            margin: 0.5em;
+            padding: 0.5em 1em;
+        }
+    }
 }
-
-
-header {
-  background-color: #C11;
-  font-size: 4em;
-  font-weight: 700;
-  padding: .25em .5em;
-  text-align: center;
-}
-
-
-footer {
-  background-color: #333;
-  font-size: 1.5em;
-  font-weight: 500;
-  padding: .5em;
-  overflow: auto;
-  text-align: center;
-
+#image-container {
+    margin: 1em;
 }
