@@ -23,7 +23,8 @@ footer {
     text-align: center;
 }
 .home-page {
-    background-color: #444;
+    background-image: image("img/Shield-logo.png");
+    background-color: #fff;
 }
 .banner {
     background-color: #C11;
@@ -34,22 +35,22 @@ footer {
   display: none;
 }
 #input-container {
-    p {
-        float: left;
-    }
+  padding: 2em;
     #query-box {
-        float: right;
-        background-color: #444;
-        border: solid 2px #DDD;
-        color: #DDD;
+        background-color: #DDD;
+        border: solid 2px #444;
+        color: #444;
         font-size: 2em;
-        margin: 1em 2em 1em 0;
-        padding: 0.3em;
-        outline: solid 1px white;
+        outline: solid 2px #444;
+        padding: 0.25em;
+        width: 100%;
     }
-    overflow: auto;
+    #image-container {
+      text-align: center;
+    }
 }
 #results {
+
   h2 {
     @extend .banner;
     background-color: #EEE;
@@ -58,6 +59,7 @@ footer {
     font-weight: 400;
   }
     #query-results {
+        min-height: 300px;
         background-color: #555;
         padding: 2em;
         li {

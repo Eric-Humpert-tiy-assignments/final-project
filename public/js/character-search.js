@@ -36,12 +36,11 @@ if (window.comicSearch === undefined) {
                 var charPic;
                 //Variable to make the input able to be used with the ajax request.
                 var codeFriendlyinput = encodeURIComponent(charName);
-
                 //ajax request variable
                 var result = $.ajax({
                     url: "http://gateway.marvel.com:80/v1/public/characters?name=" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339",
                 });
-
+                $("#query-box").val('');
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
 
@@ -54,15 +53,17 @@ if (window.comicSearch === undefined) {
                         name: (coolStuff.data.results[0].name),
                         characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg")
                     });
-                    $('#image-container').append('<img src=' + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg" + '>')
+                    $('#image-container').empty();
+                    $('#image-container').append('<img src=' + coolStuff.data.results[0].thumbnail.path + "/portrait_uncanny.jpg" + '>')
                     $('.title-bar').empty();
                     $('.title-bar').append(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.")
-
+                    console.log("the cool stuff", coolStuff);
                     //set up the collection to use the data I need to populate the search results list
                     comicCollection = coolStuff.data.results[0].comics.items;
                     $('#query-results').empty();
                     for (var item in comicCollection) {
-                        $('#query-results').append('<a href=' + comicCollection[item].resourceURI + "&apikey=1103dc5941f198d7daedd7998113e339" + '><li>' + comicCollection[item].name + '</li></a>');
+                        var link = comicCollection[item].resourceURI + "?apikey=1103dc5941f198d7daedd7998113e339";
+                        $('#query-results').append('<a href=' + link + '><li>' + comicCollection[item].name + '</li></a>');
                         console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
 
                     }
