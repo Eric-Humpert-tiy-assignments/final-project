@@ -5,8 +5,10 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     var CharacterModel = Backbone.Model.extend({
 
       defaults: {
-        name: "",
-        characterImage: ""
+        characterImage: "",
+        description: "This character has no description text in the API data result.",
+        id: 0,
+        name: ""
       }
 
   });

@@ -23,8 +23,13 @@ footer {
     text-align: center;
 }
 .home-page {
-    background-image: image("img/Shield-logo.png");
-    background-color: #fff;
+    background-color: #555;
+    background-image: url(/img/Shield-logo.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: -1em 0 0.75em rgba(255, 255, 255, 0.5), 1em 0 0.75em rgba(255, 255, 255, 0.5);
+    min-width: 100%;
 }
 .banner {
     background-color: #C11;
@@ -37,15 +42,26 @@ footer {
 #input-container {
   padding: 2em;
     #query-box {
-        background-color: #DDD;
+        background-color: transparent;
         border: solid 2px #444;
-        color: #444;
+        color: #DDD;
         font-size: 2em;
         outline: solid 2px #444;
         padding: 0.25em;
         width: 100%;
+        text-align: center;
     }
     #image-container {
+      padding-top: 2em;
+      text-align: center;
+    }
+    #favorites-button {
+      color: #444;
+      background-color: #DDD;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.5em;
+      padding: .5em 1em;
       text-align: center;
     }
 }
