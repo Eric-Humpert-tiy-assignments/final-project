@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Eric's Marvelous Comic Search!</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="home-page">
-      <header>
-        <h1 class="banner">Marvelous Comic Search App!</h1>
-      </header>
+        <header>
+            <h1 class="banner">Marvelous Comic Search App!</h1>
+        </header>
+        <div id="search-app-container">
+            <!-- seaching view div -->
+            <div class="search-view">
+                <div id="input-container">
+                    <!-- User input element for searching the API -->
+                    <input id="query-box" type="text">
+                    <div id="character-summary">
+                        <div class="image-container"></div>
+                        <p class="details-container"></p>
+                        <button class="favorites-button button hidden">Add Favorite</button>
+                    </div>
 
-    <!-- seaching view div -->
-    <div class="search-view">
-      <div id="input-container">
-      <!-- User input element for searching the API -->
-        <input id="query-box" type="text">
-        <div id="character-summary">
-          <div class="image-container"></div>
-          <p class="details-container"></p>
-          <button class="favorites-button button hidden">Add Favorite</button>
+                </div>
+                <div id="results">
+
+                    <h2 class="title-bar banner">Who are you searching for?</h2>
+                    <button class="favs-button button">Favorites</button>
+                    <ul id="query-results">
+                    </ul>
+                </div>
+            </div>
+            <div class="favorites-view">
+              <button class="search-return button">Return to Search</button>
+            </div>
         </div>
-
-      </div>
-      <div id="results">
-
-        <h2 class="title-bar banner">Who are you searching for?</h2>
-        <button class="favs-button button">Favorites</button>
-        <ul id="query-results">
-        </ul>
-      </div>
-    </div>
-    <div class="favorites-view hidden">
-    </div>
-      <!-- Data attribution statement for API use -->
-      <footer>
-        <h2>Data provided by Marvel. &#169; 2016 MARVEL</h2>
-      </footer>
+        <!-- Data attribution statement for API use -->
+        <footer>
+            <h2>Data provided by Marvel. &#169; 2016 MARVEL</h2>
+        </footer>
     </div>
 
     <!-- template function for the list items to be generated -->
     <script type="text/html" id="result-template">
-      <li>
-        <h3 class="comic-name"><a href="<%= resourceURI %>" ><%= name %></a></h3>
-      </li>
+        <li>
+            <h3 class="comic-name"><a href="<%= resourceURI %>" ><%= name %></a></h3>
+        </li>
     </script>
 
     <script type="text/html" id="image-template">
-      <img src="<%= characterPic %>" />
+        <img src="<%= characterPic %>" />
     </script>
     <!-- CDN and javascript file linkup tags -->
     </script>
@@ -64,8 +68,8 @@
     <script src="js/models/comics/comic-model.js" type="text/javascript"></script>
     <script src="js/collections/comic-collection.js" type="text/javascript"></script>
     <script src="js/collections/character-collection.js" type="text/javascript"></script>
-    <script src="js/main-view.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
 
-  </body>
+</body>
+
 </html>

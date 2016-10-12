@@ -4,7 +4,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var FavoriteCharacters = Backbone.View.extend({
     events: {
-
+      "click .search-return": "goToSearch",
     },
 
     initialize: function() {
@@ -13,6 +13,19 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     render: function() {
 
     },
+
+    goToSearch: function() {
+      console.log("You clicked search return");
+      context.routes.navigate("search", { trigger: true })
+    },
+
+    show: function() {
+      this.$el.show();
+    },
+    hide: function() {
+      this.$el.hide();
+    }
+
   });
 
   context.FavoriteCharacters = FavoriteCharacters;

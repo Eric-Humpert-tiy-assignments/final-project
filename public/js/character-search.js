@@ -13,12 +13,11 @@ if (window.comicSearch === undefined) {
         events: {
             "keyup input": "grabCharacterData",
             "click .favorites-button": "saveFavoriteCharacter",
-            "click .favs-button": "showFavoriteCharacters"
+            "click .favs-button": "goToFavorites"
         },
 
         initialize: function() {
 
-            // _.bindAll(this, 'grabHeroData', 'render', 'saveFavoriteCharacter');
             //This is something you made progress with today!
             this.model = new context.CharacterModel();
             this.listenTo(this.model, "change", this.render);
@@ -26,9 +25,6 @@ if (window.comicSearch === undefined) {
         },
 
         render: function() {
-            var self = this;
-            var template = _.template($("#image-template").html(), {charPic: this.model.get("charPic")});
-            return self;
         },
 
         //Grab Hero Data function
@@ -67,10 +63,8 @@ if (window.comicSearch === undefined) {
                         characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg"),
                         description: characterDescription
                     });
-                    $('.image-container').empty();
-                    $('.image-container').append('<img src="' + self.model.get("characterImage") + '">');
-                    $('.details-container').empty();
-                    $('.details-container').append(self.model.get("description"));
+                    $('.image-container').html('<img src="' + self.model.get("characterImage") + '">');
+                    $('.details-container').html(self.model.get("description"));
                     $('.favorites-button').removeClass('hidden');
                     $('.title-bar').empty();
                     $('.title-bar').append(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
@@ -89,11 +83,20 @@ if (window.comicSearch === undefined) {
 
             }
         },
+
+        goToFavorites: function(evt) {
+          console.log("click favorites");
+          context.routes.navigate("favorites", { trigger: true});
+        },
         saveFavoriteCharacter: function(evt) {
           this.model.save();
         },
-        showFavoriteCharacters: function(evt) {
 
+        show: function() {
+          this.$el.show();
+        },
+        hide: function() {
+          this.$el.hide();
         }
     });
 
