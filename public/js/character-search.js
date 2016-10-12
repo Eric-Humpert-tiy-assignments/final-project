@@ -43,7 +43,7 @@ if (window.comicSearch === undefined) {
                 $("#query-box").val('');
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
-
+                    self.model = new context.CharacterModel();
                     //console.log check for building the character thumbnail image link
                     // console.log("character image: " + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
                     // console.log("this check:", self);
