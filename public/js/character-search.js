@@ -12,7 +12,8 @@ if (window.comicSearch === undefined) {
         //Event pair declaration
         events: {
             "keyup input": "grabCharacterData",
-            "click #favorites-button": "saveFavoriteCharacter"
+            "click .favorites-button": "saveFavoriteCharacter",
+            "click .favs-button": "showFavoriteCharacters"
         },
 
         initialize: function() {
@@ -61,14 +62,16 @@ if (window.comicSearch === undefined) {
                     console.log("characterDescription:", characterDescription);
 
                     self.model.set({
-                        id: (coolStuff.data.results[0].id),
+                        characterId: (coolStuff.data.results[0].id),
                         name: (coolStuff.data.results[0].name),
-                        characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_uncanny.jpg"),
+                        characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg"),
                         description: characterDescription
                     });
-                    $('#image-container').empty();
-                    $('#image-container').append('<img src="' + self.model.get("characterImage") + '">');
-                    $('#favorites-button').removeClass('hidden');
+                    $('.image-container').empty();
+                    $('.image-container').append('<img src="' + self.model.get("characterImage") + '">');
+                    $('.details-container').empty();
+                    $('.details-container').append(self.model.get("description"));
+                    $('.favorites-button').removeClass('hidden');
                     $('.title-bar').empty();
                     $('.title-bar').append(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
                     console.log("the cool stuff", coolStuff);
@@ -76,8 +79,8 @@ if (window.comicSearch === undefined) {
                     comicCollection = coolStuff.data.results[0].comics.items;
                     $('#query-results').empty();
                     for (var item in comicCollection) {
-                        var link = comicCollection[item].resourceURI + "?apikey=1103dc5941f198d7daedd7998113e339";
-                        $('#query-results').append('<a href=' + link + '><li>' + comicCollection[item].name + '</li></a>');
+                        // var link = comicCollection[item].resourceURI + "?apikey=1103dc5941f198d7daedd7998113e339";
+                        $('#query-results').append('<li>' + comicCollection[item].name + '</li>');
                         // console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
 
                     }
@@ -87,7 +90,10 @@ if (window.comicSearch === undefined) {
             }
         },
         saveFavoriteCharacter: function(evt) {
-          alert("Hulk is strongest there is!");
+          this.model.save();
+        },
+        showFavoriteCharacters: function(evt) {
+
         }
     });
 

@@ -36,11 +36,23 @@ footer {
     padding: 0.25em 0.5em;
     text-align: center;
 }
+
+.button {
+  color: #444;
+  background-color: #DDD;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.5em;
+  padding: .5em 1em;
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }
 #input-container {
   padding: 2em;
+
     #query-box {
         background-color: transparent;
         border: solid 2px #444;
@@ -51,22 +63,39 @@ footer {
         width: 100%;
         text-align: center;
     }
-    #image-container {
-      padding-top: 2em;
-      text-align: center;
+
+    #character-summary {
+      overflow: auto;
+      padding: 2em;
+      width: 100%;
+
+      .image-container {
+        float: left;
+        text-align: left;
+        max-width: 30%;
+        padding-right: 1em;
+      }
+
+      .details-container {
+        float: left;
+        font-size: 2em;
+        padding-right: 0;
+        padding: 1em;
+        max-width: 70%;
+      }
+      .favorites-button {
+        float: left;
+      }
     }
-    #favorites-button {
-      color: #444;
-      background-color: #DDD;
-      border: none;
-      border-radius: 25px;
-      font-size: 1.5em;
-      padding: .5em 1em;
-      text-align: center;
-    }
+
 }
 #results {
-
+  overflow: auto;
+  .favs-button {
+    float: right;
+    margin-right: 1em;
+    margin-top: 1em;
+  }
   h2 {
     @extend .banner;
     background-color: #EEE;
@@ -85,7 +114,4 @@ footer {
             padding: 0.5em 1em;
         }
     }
-}
-#image-container {
-    margin: 1em;
 }

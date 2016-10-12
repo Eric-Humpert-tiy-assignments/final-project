@@ -14,10 +14,12 @@ app.get('/api/favorites', function(req, res) {
   res.send(favoritesList)
 });
 
-app.post('api/favorites', function(req, res) {
+app.post('/api/favorites', function(req, res) {
   favoritesList.push({
     id: req.body.id,
-    name: req.body.name
+    name: req.body.name,
+    characterImage: req.body.characterImage,
+    description: req.body.description
   });
 
   res.sendStatus(204);

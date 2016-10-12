@@ -3,11 +3,12 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 (function(context) {
 
     var CharacterModel = Backbone.Model.extend({
+      url: "api/favorites",
 
       defaults: {
         characterImage: "",
         description: "This character has no description text in the API data result.",
-        id: 0,
+        characterId: 0,
         name: ""
       }
 

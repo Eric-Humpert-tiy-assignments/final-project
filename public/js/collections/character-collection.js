@@ -1,14 +1,11 @@
 if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
 (function(context) {
-
-  var CharacterImage = Backbone.View.extend({
+  var CharacterCollection = Backbone.Collection.extend({
     model: context.CharacterModel,
+    url: "/api/favorites",
 
-    events: {
-      'change': 'grabCharacterData'
-    }
   });
+  context.CharacterCollection = CharacterCollection;
 
-  context.CharacterImage = CharacterImage;
 })(window.comicSearch);
