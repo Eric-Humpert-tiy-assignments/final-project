@@ -14,7 +14,8 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     routes: {
       "search": "searchReturn",
-      "favorites": "goToFaves"
+      "favorites": "goToFaves",
+      "*home": "defaultPath"
     },
 
     searchReturn: function() {
@@ -25,6 +26,10 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     goToFaves: function() {
       favoriteCharacters.show();
       characterSearch.hide();
+    },
+
+    defaultPath: function() {
+      favoriteCharacters.hide();
     }
 
   });
