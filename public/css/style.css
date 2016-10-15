@@ -153,3 +153,8 @@ footer {
 
 .favorites-view .favorites-list {
   background: transparent; }
+  .favorites-view .favorites-list li {
+    padding: .5em;
+    font-size: 3.2em; }
+    .favorites-view .favorites-list li img {
+      padding-right: .5em; }
