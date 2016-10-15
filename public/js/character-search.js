@@ -21,7 +21,6 @@ if (window.comicSearch === undefined) {
             //This is something you made progress with today!
             this.model = new context.CharacterModel();
             this.listenTo(this.model, "change", this.render);
-            console.log("model check:",this.model);
         },
 
         render: function() {
@@ -63,11 +62,13 @@ if (window.comicSearch === undefined) {
                         characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg"),
                         description: characterDescription
                     });
+                    console.log("model check:",this.model);
+
+                    //Jquery DOM stuff
                     $('.image-container').html('<img src="' + self.model.get("characterImage") + '">');
                     $('.details-container').html(self.model.get("description"));
                     $('.favorites-button').removeClass('hidden');
-                    $('.title-bar').empty();
-                    $('.title-bar').append(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
+                    $('.title-bar').html(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
                     console.log("the cool stuff", coolStuff);
                     //set up the collection to use the data I need to populate the search results list
                     comicCollection = coolStuff.data.results[0].comics.items;

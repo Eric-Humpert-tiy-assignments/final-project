@@ -97,6 +97,16 @@ footer {
 .hidden {
   display: none; }
 
+.list-styling {
+  min-height: 300px;
+  background-color: #555;
+  padding: 2em; }
+  .list-styling li {
+    background-color: #777;
+    font-size: 30px;
+    margin: 0.5em;
+    padding: 0.5em 1em; }
+
 #input-container {
   padding: 2em; }
   #input-container #query-box {
@@ -137,12 +147,9 @@ footer {
     color: #222;
     font-size: 2em;
     font-weight: 400; }
-  #results #query-results {
-    min-height: 300px;
-    background-color: #555;
-    padding: 2em; }
-    #results #query-results li {
-      background-color: #777;
-      font-size: 30px;
-      margin: 0.5em;
-      padding: 0.5em 1em; }
+
+.favorites-view .search-return {
+  margin: 1em; }
+
+.favorites-view .favorites-list {
+  background: transparent; }
