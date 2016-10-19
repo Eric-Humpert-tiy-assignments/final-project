@@ -59,13 +59,13 @@ if (window.comicSearch === undefined) {
                     self.model.set({
                         characterId: (coolStuff.data.results[0].id),
                         name: (coolStuff.data.results[0].name),
-                        characterImage: (coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg"),
+                        characterImage: (coolStuff.data.results[0].thumbnail.path),
                         description: characterDescription
                     });
                     console.log("model check:",this.model);
 
                     //Jquery DOM stuff
-                    $('.image-container').html('<img src="' + self.model.get("characterImage") + '">');
+                    $('.image-container').html('<img src="' + self.model.get("characterImage") + "/portrait_fantastic.jpg" + '">');
                     $('.details-container').html(self.model.get("description"));
                     $('.favorites-button').removeClass('hidden');
                     $('.title-bar').html(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
