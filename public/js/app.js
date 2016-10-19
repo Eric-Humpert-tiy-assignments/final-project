@@ -7,7 +7,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
   var characterSearch = new context.CharacterSearch({ el: $(".search-view")});
   var comicModel = new context.ComicModel();
   var characterCollection = new context.CharacterCollection();
-
+  var characterView = new context.CharacterView({ el: $(".favorites-list")});
   var appRouter = Backbone.Router.extend({
 
     routes: {
