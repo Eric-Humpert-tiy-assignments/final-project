@@ -36,7 +36,6 @@
             <div class="favorites-view">
               <button class="search-return button">Return to Search</button>
               <ul class="favorites-list list-styling">
-                <li><img src="http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/portrait_small.jpg" ><span>Hulk</span></li>
               </ul>
             </div>
         </div>
@@ -48,9 +47,9 @@
 
     <!-- template function for the list items to be generated -->
     <script type="text/html" id="character-template">
-        <li>
-          <li class='character-item'><img src="<%= characterImage %>" +"/portrait_small.jpg" ><span><%= Name %></span></li>
-        </li>
+          <li class='character-item'>
+            <img src="<%= characterImage %>" +"/portrait_small.jpg" ><span><%= Name %></span>
+          </li>
     </script>
     <!-- CDN and javascript file linkup tags -->
     </script>

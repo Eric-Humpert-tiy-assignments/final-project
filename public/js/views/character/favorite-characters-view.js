@@ -8,13 +8,6 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
       "click .search-return": "goToSearch",
     },
 
-    initialize: function() {
-      console.log("Collection check:", this.collection);
-    },
-    render: function() {
-
-    },
-
     goToSearch: function() {
       console.log("You clicked search return");
       context.routes.navigate("search", { trigger: true })

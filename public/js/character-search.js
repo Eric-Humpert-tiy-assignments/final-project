@@ -62,7 +62,6 @@ if (window.comicSearch === undefined) {
                         characterImage: (coolStuff.data.results[0].thumbnail.path),
                         description: characterDescription
                     });
-                    console.log("model check:",this.model);
 
                     //Jquery DOM stuff
                     $('.image-container').html('<img src="' + self.model.get("characterImage") + "/portrait_fantastic.jpg" + '">');
