@@ -4,6 +4,8 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var CharacterView = Backbone.View.extend({
 
+    tagName: li,
+
     initialize: function() {
       this.model.fetch();
       var self = this.model;

@@ -54,7 +54,7 @@ if (window.comicSearch === undefined) {
                     } else {
                       self.model.set({description: characterDescription});
                     };
-                    console.log("characterDescription:", characterDescription);
+                    // console.log("characterDescription:", characterDescription);
 
                     self.model.set({
                         characterId: (coolStuff.data.results[0].id),

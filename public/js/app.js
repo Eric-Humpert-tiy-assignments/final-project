@@ -3,7 +3,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 (function(context) {
 
   var characterModel = new context.CharacterModel();
-  var favoriteCharacters = new context.FavoriteCharacters({ el: $(".favorites-view")});
+  var favoriteCharacters = new context.FavoriteCharacters({ el: $(".favorites-view"), collection: characterCollection});
   var characterSearch = new context.CharacterSearch({ el: $(".search-view")});
   var comicModel = new context.ComicModel();
   var characterCollection = new context.CharacterCollection();
