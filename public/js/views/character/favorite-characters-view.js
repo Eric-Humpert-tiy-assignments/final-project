@@ -7,6 +7,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     events: {
       "click .search-return": "goToSearch",
     },
+    
 
     goToSearch: function() {
       console.log("You clicked search return");

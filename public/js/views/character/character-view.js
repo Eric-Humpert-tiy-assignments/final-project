@@ -4,31 +4,27 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var CharacterView = Backbone.View.extend({
 
-    tagName: li,
+    tagName: "li",
 
-    initialize: function() {
-      this.model.fetch();
-      var self = this.model;
-      self.on({
-        "change": function() {
-          self.render();
-        }
-      });
+    template: _.template($('#character-template').html()),
+
+    render() {
+      var data = this.serializeData();
+      var renderedHtml = this.template(data);
+      this.$el.html(renderedHtml);
+      return this;
     },
 
-    render: function() {
-      this.model.forEach(this.model, this.templateFunc);
-    },
+    serializeData() {
+      var data;
 
-    templateFunc: function() {
-      console.log("the template");
-      var template = $("#character-template");
-      var displayMagics = _.template(template.html());
-      var templateHTML = displayMagics({ characterImage: this.model.get('characterImage'), Name: this.model.get('name')});
-      this.$el.html(templateHTML);
+      if (this.model) {
+        data = this.model.toJSON();
+      }
+
+      return data;
     }
 
-    // characterImage Name
   });
   context.CharacterView = CharacterView;
 })(window.comicSearch);

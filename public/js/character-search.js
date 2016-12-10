@@ -43,10 +43,6 @@ if (window.comicSearch === undefined) {
                 //when the data request finishes a console log to display the resulting comic data
                 result.done(function(coolStuff) {
                     self.model = new context.CharacterModel();
-                    //console.log check for building the character thumbnail image link
-                    // console.log("character image: " + coolStuff.data.results[0].thumbnail.path + "/portrait_fantastic.jpg");
-                    // console.log("this check:", self);
-                    // console.log("model check:", self.model);
                     //set the attribute of the model to the link that is the character image from the API
                     var characterDescription = coolStuff.data.results[0].description;
                     if ( characterDescription === "") {
@@ -54,7 +50,6 @@ if (window.comicSearch === undefined) {
                     } else {
                       self.model.set({description: characterDescription});
                     };
-                    // console.log("characterDescription:", characterDescription);
 
                     self.model.set({
                         characterId: (coolStuff.data.results[0].id),
@@ -73,10 +68,7 @@ if (window.comicSearch === undefined) {
                     comicCollection = coolStuff.data.results[0].comics.items;
                     $('#query-results').empty();
                     for (var item in comicCollection) {
-                        // var link = comicCollection[item].resourceURI + "?apikey=1103dc5941f198d7daedd7998113e339";
                         $('#query-results').append('<li>' + comicCollection[item].name + '</li>');
-                        // console.log("title:", comicCollection[item].name, "ResourceURI:", comicCollection[item].resourceURI);
-
                     }
                     return comicCollection;
                 })
