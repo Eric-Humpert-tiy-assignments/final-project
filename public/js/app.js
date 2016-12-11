@@ -3,11 +3,12 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 (function(context) {
 
   var characterModel = new context.CharacterModel();
-  var favoriteCharacters = new context.FavoriteCharacters({ el: $(".favorites-view"), collection: characterCollection});
+  var favoriteCharacters = new context.FavoriteCharacters({ el: $(".favorites-view")});
   var characterSearch = new context.CharacterSearch({ el: $(".search-view")});
   var comicModel = new context.ComicModel();
-  var characterCollection = new context.CharacterCollection();
+  var characterCollection = new context.CharacterCollection(null, { model: characterModel});
   var characterView = new context.CharacterView({ el: 'favorites-list', model: characterModel});
+  var charactersList = new context.CharactersList({ el: 'favorites-list', collection: characterCollection})
   var appRouter = Backbone.Router.extend({
 
     routes: {
