@@ -6,9 +6,10 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
       url: "api/favorites",
 
       defaults: {
+        characterId: 0,
         characterImage: "",
         description: "This character has no description text in the API data result.",
-        characterId: 0,
+        Id: 0,
         name: ""
       }
 

@@ -19,9 +19,11 @@
                     <!-- User input element for searching the API -->
                     <input id="query-box" type="text">
                     <div id="character-summary">
-                        <div class="image-container"></div>
+                        <div id="character-image-card">
+                            <div class="image-container"></div>
+                            <button class="favorites-button button hidden">Add Favorite</button>
+                        </div>
                         <p class="details-container"></p>
-                        <button class="favorites-button button hidden">Add Favorite</button>
                     </div>
 
                 </div>
@@ -34,9 +36,9 @@
                 </div>
             </div>
             <div class="favorites-view">
-              <button class="search-return button">Return to Search</button>
-              <ul class="favorites-list list-styling">
-              </ul>
+                <button class="search-return button">Return to Search</button>
+                <ul class="favorites-list list-styling">
+                </ul>
             </div>
         </div>
         <!-- Data attribution statement for API use -->
@@ -47,9 +49,9 @@
 
     <!-- template function for the list items to be generated -->
     <script type="text/html" id="character-template">
-          <li class='character-item'>
-            <img src="<%= characterImage %>" + "/portrait_small.jpg" ><span><%= Name %></span>
-          </li>
+        <li class='character-item'>
+            <img src="<%= characterImage %>" + "/portrait_small.jpg"><span><%= Name %></span>
+        </li>
     </script>
     <!-- CDN and javascript file linkup tags -->
     </script>

@@ -5,8 +5,9 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
   var CharactersList = Backbone.View.extend({
 
     initialize() {
+      this.collection.fetch();
       console.log("collection check:", this.collection);
-      this.listenTo(this.collection, 'add', this.addModel);
+      this.listenTo(this.collection, 'add', this.modelAdded);
     },
 
     modelAdded(model) {
@@ -15,6 +16,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     render() {
+
       var html = this.collection.map(model => {
         var view = this.renderModel(model);
         view.render();
