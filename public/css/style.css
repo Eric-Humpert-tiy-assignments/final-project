@@ -122,19 +122,18 @@ footer {
     overflow: auto;
     padding: 2em;
     width: 100%; }
-    #input-container #character-summary .image-container {
-      float: left;
-      text-align: left;
-      max-width: 30%;
-      padding-right: 1em; }
+    #input-container #character-summary #character-image-card {
+      float: left; }
+      #input-container #character-summary #character-image-card .image-container {
+        text-align: left;
+        max-width: 30%;
+        padding-right: 1em; }
     #input-container #character-summary .details-container {
       float: left;
       font-size: 2em;
       padding-right: 0;
       padding: 1em;
       max-width: 70%; }
-    #input-container #character-summary .favorites-button {
-      float: left; }
 
 #results {
   overflow: auto; }

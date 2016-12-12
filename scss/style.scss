@@ -82,22 +82,20 @@ footer {
       padding: 2em;
       width: 100%;
 
-      .image-container {
+      #character-image-card {
         float: left;
-        text-align: left;
-        max-width: 30%;
-        padding-right: 1em;
+        .image-container {
+          text-align: left;
+          max-width: 30%;
+          padding-right: 1em;
+        }
       }
-
       .details-container {
         float: left;
         font-size: 2em;
         padding-right: 0;
         padding: 1em;
         max-width: 70%;
-      }
-      .favorites-button {
-        float: left;
       }
     }
 
