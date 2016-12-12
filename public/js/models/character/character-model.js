@@ -9,7 +9,6 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
         characterId: 0,
         characterImage: "",
         description: "This character has no description text in the API data result.",
-        Id: 0,
         name: ""
       }
 
