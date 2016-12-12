@@ -16,7 +16,8 @@ app.get('/api/favorites', function(req, res) {
 
 app.post('/api/favorites', function(req, res) {
   favoritesList.push({
-    id: req.body.id,
+    characterId: req.body.characterId,
+    id: req.body.Id;
     name: req.body.name,
     characterImage: req.body.characterImage,
     description: req.body.description
