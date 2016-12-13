@@ -81,6 +81,7 @@ if (window.comicSearch === undefined) {
           context.routes.navigate("favorites", { trigger: true});
         },
         saveFavoriteCharacter: function(evt) {
+          console.log("Saved a Favorite!");
           this.model.save();
         },
 
