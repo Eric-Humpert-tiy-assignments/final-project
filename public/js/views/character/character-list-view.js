@@ -4,10 +4,12 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var CharactersList = Backbone.View.extend({
 
+    collection: context.CharacterCollection,
+
     initialize() {
       this.collection.fetch();
-      console.log("collection check:", this.collection);
       this.listenTo(this.collection, 'add', this.modelAdded);
+      console.log("collection check:", this.collection);
     },
 
     modelAdded(model) {
@@ -28,10 +30,9 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     renderModel (model) {
-      var view = new this.characterView({ model: model});
+      var view = new context.CharacterView({ model: model});
 
       //view model relation tracker
-      this.children[model.cid] = view;
 
       this.listenTo(view, 'all', eventName => {
         this.trigger('item:' + eventName, view, model);
@@ -42,6 +43,8 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     }
 
   });
+
+
 
   context.CharactersList = CharactersList;
 
