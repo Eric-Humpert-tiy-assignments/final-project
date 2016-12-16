@@ -4,7 +4,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var CharactersList = Backbone.View.extend({
 
-    collection: context.CharacterCollection,
+    // collection: context.CharacterCollection,
 
     initialize() {
       this.collection.fetch();
