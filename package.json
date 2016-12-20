@@ -1,7 +1,7 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "description": "A simple battle survival game using Marvel heroes and villains",
+  "description": "A comic book title searching app using the Marvel API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
