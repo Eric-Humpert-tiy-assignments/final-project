@@ -18,10 +18,12 @@ if (window.comicSearch === undefined) {
             console.log("added a model!");
             var view = this.renderModel(model);
             this.$el.append(view.$el);
+            console.log("$el check", this.$el);
+            console.log("view check", view);
         },
 
         render() {
-          console.log("render count");
+          console.log("render count", this.collection.length);
             var html = this.collection.map(model => {
                 var view = this.renderModel(model);
                 view.render();
