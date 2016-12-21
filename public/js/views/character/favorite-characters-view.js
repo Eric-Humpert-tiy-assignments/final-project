@@ -4,11 +4,10 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
   var FavoriteCharacters = Backbone.View.extend({
 
-
-
     initialize: function() {
-      console.log("collection check:", this.collection);
-      var charactersList = new context.CharactersList({ el: 'favorites-list', collection: this.collection})
+      var charactersList = new context.CharactersList({ el: 'favorites-list', collection: this.collection});
+      this.collection.fetch({remove: false});
+      charactersList.render();
     },
 
     events: {

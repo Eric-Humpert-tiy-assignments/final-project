@@ -1,51 +1,49 @@
-if (window.comicSearch === undefined) { window.comicSearch = {}; }
+if (window.comicSearch === undefined) {
+    window.comicSearch = {};
+}
 
 (function(context) {
 
-  var CharactersList = Backbone.View.extend({
+    var CharactersList = Backbone.View.extend({
 
-    // collection: context.CharacterCollection,
+        // collection: context.CharacterCollection,
 
-    initialize() {
-      this.collection.fetch();
-      this.listenTo(this.collection, 'add', this.modelAdded);
-      console.log("collection check:", this.collection);
-    },
+        initialize() {
+            // this.collection.fetch();
+            this.listenTo(this.collection, 'add', this.modelAdded);
+            // console.log("collection check:", this.collection);
+        },
 
-    modelAdded(model) {
-      var view = this.renderModel(model);
-      this.$el.append(view.$el);
-    },
+        modelAdded(model) {
+            console.log("added a model!");
+            var view = this.renderModel(model);
+            this.$el.append(view.$el);
+        },
 
-    render() {
+        render() {
+          console.log("render count");
+            var html = this.collection.map(model => {
+                var view = this.renderModel(model);
+                view.render();
+                return view.$el;
+            })
+            console.log("HTML stuff:", html);
+            this.$el.html(html);
+            return this;
+        },
 
-      var html = this.collection.map(model => {
-        var view = this.renderModel(model);
-        view.render();
-        return view.$el;
-      })
+        renderModel(model) {
+            var view = new context.CharacterView({
+                model: model
+            });
+            view.render();
+            return view;
+        }
 
-      this.$el.html(html);
-      return this;
-    },
-
-    renderModel (model) {
-      var view = new context.CharacterView({ model: model});
-
-      //view model relation tracker
-
-      this.listenTo(view, 'all', eventName => {
-        this.trigger('item:' + eventName, view, model);
-      });
-
-      view.render();
-      return view;
-    }
-
-  });
+    });
 
 
 
-  context.CharactersList = CharactersList;
+    context.CharactersList = CharactersList;
 
 })(window.comicSearch);

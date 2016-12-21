@@ -9,6 +9,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     template: _.template($('#character-template').html()),
 
     render() {
+      console.log("this check:", this, this.model.get("characterId"));
       var data = this.serializeData();
       var renderedHtml = this.template(data);
       this.$el.html(renderedHtml);
@@ -17,7 +18,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     serializeData() {
       var data;
-
+      // console.log("model check", this.model);
       if (this.model) {
         data = this.model.toJSON();
       }
