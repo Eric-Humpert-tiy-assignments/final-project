@@ -9,13 +9,12 @@ if (window.comicSearch === undefined) {
         // collection: context.CharacterCollection,
 
         initialize() {
-            // this.collection.fetch();
             this.listenTo(this.collection, 'add', this.modelAdded);
-            // console.log("collection check:", this.collection);
         },
 
         modelAdded(model) {
             console.log("added a model!");
+            // this.collection.fetch();
             var view = this.renderModel(model);
             this.$el.append(view.$el);
             console.log("$el check", this.$el);
