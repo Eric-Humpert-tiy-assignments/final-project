@@ -107,8 +107,17 @@ footer {
     margin: 0.5em;
     padding: 0.5em 1em; }
 
+.ui-widget-header {
+  background-color: #555;
+  font-weight: bold;
+  font-size: 2em; }
+
+.ui-widget {
+  background-color: #777;
+  font-size: 1em; }
+
 #success-message {
-  background-color: #777; }
+  display: none; }
 
 #input-container {
   padding: 2em; }

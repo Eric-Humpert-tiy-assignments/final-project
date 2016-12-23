@@ -63,8 +63,19 @@ footer {
     }
 }
 
-#success-message {
+.ui-widget-header {
+  background-color: #555;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.ui-widget {
   background-color: #777;
+  font-size: 1em;
+}
+
+#success-message {
+  display: none;
 }
 
 #input-container {

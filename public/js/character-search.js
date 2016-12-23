@@ -84,14 +84,7 @@ if (window.comicSearch === undefined) {
           this.model.save();
           console.log("Saved a Favorite!");
           $(function() {
-            $( "#success-message").dialog({
-              modal: true,
-              buttons: {
-                Ok: function() {
-                  $( this).dialog("close");
-                }
-              }
-            })
+            $( "#success-message").dialog();
           });
         },
 
