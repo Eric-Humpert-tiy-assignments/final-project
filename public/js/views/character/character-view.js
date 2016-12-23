@@ -9,7 +9,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     template: _.template($('#character-template').html()),
 
     render() {
-      console.log("this check:", this, this.model.get("characterId"));
+      // console.log("this check:", this, this.model.get("characterId"));
       var data = this.serializeData();
       var renderedHtml = this.template(data);
       this.$el.html(renderedHtml);

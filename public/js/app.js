@@ -23,6 +23,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     goToFaves: function() {
       favoriteCharacters.show();
+      favoriteCharacters.render();
       characterSearch.hide();
     },
 

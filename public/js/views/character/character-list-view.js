@@ -19,13 +19,12 @@ if (window.comicSearch === undefined) {
         },
 
         render() {
-            // console.log("render count", this.collection.length);
+            this.$el.empty();
             var html = this.collection.map(model => {
                 var view = this.renderModel(model);
                 view.render();
                 return view.$el;
             })
-            // console.log("HTML stuff:", html);
             this.$el.html(html);
             return this;
         },
@@ -36,6 +35,7 @@ if (window.comicSearch === undefined) {
             });
             view.render();
             return view;
+
         }
 
     });

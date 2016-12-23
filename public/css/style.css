@@ -110,11 +110,16 @@ footer {
 .ui-widget-header {
   background-color: #555;
   font-weight: bold;
-  font-size: 2em; }
+  font-size: 2em;
+  margin: 0;
+  padding: 5px;
+  text-align: left; }
 
-.ui-widget {
+.ui-widget p {
   background-color: #777;
-  font-size: 1em; }
+  font-size: 1em;
+  padding: 20px;
+  text-align: center; }
 
 #success-message {
   display: none; }
