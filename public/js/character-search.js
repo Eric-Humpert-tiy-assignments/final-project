@@ -82,8 +82,17 @@ if (window.comicSearch === undefined) {
         },
         saveFavoriteCharacter: function(evt) {
           this.model.save();
-          swal("You" + this.model.name + " saved as a favorite!");
           console.log("Saved a Favorite!");
+          $(function() {
+            $( "#success-message").dialog({
+              modal: true,
+              buttons: {
+                Ok: function() {
+                  $( this).dialog("close");
+                }
+              }
+            })
+          });
         },
 
         show: function() {

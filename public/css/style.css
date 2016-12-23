@@ -107,6 +107,9 @@ footer {
     margin: 0.5em;
     padding: 0.5em 1em; }
 
+#success-message {
+  background-color: #777; }
+
 #input-container {
   padding: 2em; }
   #input-container #query-box {

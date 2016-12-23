@@ -14,21 +14,18 @@ if (window.comicSearch === undefined) {
 
         modelAdded(model) {
             console.log("added a model!");
-            // this.collection.fetch();
             var view = this.renderModel(model);
             this.$el.append(view.$el);
-            console.log("$el check", this.$el);
-            console.log("view check", view);
         },
 
         render() {
-          console.log("render count", this.collection.length);
+            // console.log("render count", this.collection.length);
             var html = this.collection.map(model => {
                 var view = this.renderModel(model);
                 view.render();
                 return view.$el;
             })
-            console.log("HTML stuff:", html);
+            // console.log("HTML stuff:", html);
             this.$el.html(html);
             return this;
         },
