@@ -20,13 +20,15 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     render: function() {
-      console.log("rendering!");
-      this.charactersList.render();
+      // console.log("Favorites View render");
+      console.log("fetching the latest collection!");
+      this.collection.fetch().done(console.log("collection has been fetched!"));
+      // this.charactersList.render();
     },
 
     show: function() {
-      console.log("fetching the latest collection!");
-      this.collection.fetch();
+      $(".favorites-list").empty();
+      this.render();
       this.$el.show();
     },
     hide: function() {

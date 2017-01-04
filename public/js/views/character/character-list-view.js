@@ -19,10 +19,11 @@ if (window.comicSearch === undefined) {
         },
 
         render() {
-            this.$el.empty();
+            // console.log("Character List View Render!");
+            // this.$el.empty();
             var html = this.collection.map(model => {
                 var view = this.renderModel(model);
-                view.render();
+                // view.render();
                 return view.$el;
             })
             this.$el.html(html);

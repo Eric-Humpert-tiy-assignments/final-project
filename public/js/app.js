@@ -3,9 +3,9 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 (function(context) {
 
   var characterModel = new context.CharacterModel();
-  var characterSearch = new context.CharacterSearch({ el: $(".search-view")});
   var comicModel = new context.ComicModel();
   var characterCollection = new context.CharacterCollection();
+  var characterSearch = new context.CharacterSearch({ el: $(".search-view"), collection: characterCollection});
   var characterView = new context.CharacterView({ el: 'favorites-list', model: characterModel});
   var favoriteCharacters = new context.FavoriteCharacters({ el: $(".favorites-view"), collection: characterCollection});
   var appRouter = Backbone.Router.extend({
@@ -23,7 +23,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     goToFaves: function() {
       favoriteCharacters.show();
-      favoriteCharacters.render();
+      // favoriteCharacters.render();
       characterSearch.hide();
     },
 
