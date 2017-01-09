@@ -24,13 +24,12 @@ if (window.comicSearch === undefined) {
             this.listenTo(this.model, "change", this.render);
         },
 
-        render: function() {
-        },
+        render: function() {},
 
         //Grab Hero Data function
         grabCharacterData: function(evt) {
-          //bind the this keyword to a self variable declaration.
-          var self = this;
+            //bind the this keyword to a self variable declaration.
+            var self = this;
             if (evt.keyCode === 13) {
                 var charName = $("#query-box").val();
                 var charPic;
@@ -46,10 +45,12 @@ if (window.comicSearch === undefined) {
                     self.model = new context.CharacterModel();
                     //set the attribute of the model to the link that is the character image from the API
                     var characterDescription = coolStuff.data.results[0].description;
-                    if ( characterDescription === "") {
-                      characterDescription = self.model.get("description");
+                    if (characterDescription === "") {
+                        characterDescription = self.model.get("description");
                     } else {
-                      self.model.set({description: characterDescription});
+                        self.model.set({
+                            description: characterDescription
+                        });
                     };
 
                     self.model.set({
@@ -58,14 +59,14 @@ if (window.comicSearch === undefined) {
                         characterImage: (coolStuff.data.results[0].thumbnail.path),
                         description: characterDescription
                     });
-
                     //Jquery DOM stuff
                     $('.image-container').html('<img src="' + self.model.get("characterImage") + "/portrait_fantastic.jpg" + '">');
                     $('.details-container').html(self.model.get("description"));
                     $('.favorites-button').removeClass('hidden');
                     $('.title-bar').html(" Here are some of the comics " + coolStuff.data.results[0].name + " appears in.");
-                    console.log("the cool stuff", coolStuff);
-                    console.log("what's this?", self.model.get("characterId"));
+                    // console.log("the cool stuff", coolStuff);
+                    // console.log("what's this?", self.model.get("characterId"));
+
                     //set up the collection to use the data I need to populate the search results list
                     comicCollection = coolStuff.data.results[0].comics.items;
                     $('#query-results').empty();
@@ -79,22 +80,33 @@ if (window.comicSearch === undefined) {
         },
 
         goToFavorites: function(evt) {
-          console.log("click favorites");
-          context.routes.navigate("favorites", { trigger: true});
+            console.log("click favorites");
+            context.routes.navigate("favorites", {
+                trigger: true
+            });
         },
         saveFavoriteCharacter: function(evt) {
-          this.model.save();
-          console.log("Saved a Favorite!");
-          $(function() {
-            $("#success-message").dialog();
-          });
+
+            _.each(this.collection.models, function(a, b, c) {
+                console.log("what is this.model at this point?", this.model);
+                console.log("what's a", a);
+                console.log("what's b", b);
+                console.log("what's c", c);
+                // // if (model !== ) {
+                //
+                // this.model.save();
+                //     $(function() {
+                //         $("#success-message").dialog();
+                //     });
+                // }
+            }, this.model)
         },
 
         show: function() {
-          this.$el.show();
+            this.$el.show();
         },
         hide: function() {
-          this.$el.hide();
+            this.$el.hide();
         }
     });
 
