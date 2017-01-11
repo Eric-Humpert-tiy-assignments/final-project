@@ -94,6 +94,9 @@ footer {
   padding: .5em 1em;
   text-align: center; }
 
+.button:hover {
+  background-color: #CCC; }
+
 .hidden {
   display: none; }
 
@@ -107,22 +110,7 @@ footer {
     margin: 0.5em;
     padding: 0.5em 1em; }
 
-.ui-widget-header {
-  background-color: #555;
-  font-weight: bold;
-  font-size: 2em;
-  margin: 0;
-  padding: 30px;
-  text-align: center; }
-
-.ui-widget p {
-  background-color: #777;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center; }
-
-#success-message {
+.success-message {
   display: none; }
 
 #input-container {

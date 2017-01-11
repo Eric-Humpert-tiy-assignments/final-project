@@ -96,7 +96,7 @@ if (window.comicSearch === undefined) {
                 //
                 // this.model.save();
                 //     $(function() {
-                //         $("#success-message").dialog();
+                //         $(".success-message").dialog();
                 //     });
                 // }
             }, this.model)
