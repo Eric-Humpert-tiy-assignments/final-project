@@ -86,20 +86,20 @@ if (window.comicSearch === undefined) {
             });
         },
         saveFavoriteCharacter: function(evt) {
+          var model = this.model;
+          var modelList = this.collection.models;
+          var isValidSave = _.find(modelList, function(model) {
+            console.log("Is this function running?")
+            return model === modelList;
+          });
+          console.log("what is isValidSave at this point? ", isValidSave);
+              if (isValidSave === undefined) {
 
-            _.each(this.collection.models, function(a, b, c) {
-                console.log("what is this.model at this point?", this.model);
-                console.log("what's a", a);
-                console.log("what's b", b);
-                console.log("what's c", c);
-                // // if (model !== ) {
-                //
-                // this.model.save();
-                //     $(function() {
-                //         $(".success-message").dialog();
-                //     });
-                // }
-            }, this.model)
+                model.save();
+                $(function() {
+                    $(".success-message").dialog();
+                });
+              }
         },
 
         show: function() {

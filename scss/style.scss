@@ -51,6 +51,14 @@ footer {
   background-color: #CCC;
 }
 
+.button:focus {
+  outline:0;
+}
+
+.favorites-button {
+  padding: .5em .79em;
+}
+
 .hidden {
   display: none;
 }
