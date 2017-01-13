@@ -1,19 +1,23 @@
 @import 'reset';
+
 body {
     background-color: #111;
     color: #EEE;
     font-family: sans-serif;
     margin: 0 50px;
+
     a {
         color: #CCC;
         text-decoration: none;
     }
 }
+
 header {
     font-size: 4em;
     font-weight: 700;
     @extend .banner;
 }
+
 footer {
     background-color: #333;
     font-size: 1.5em;
@@ -22,51 +26,101 @@ footer {
     overflow: auto;
     text-align: center;
 }
+
 .home-page {
     background-color: #555;
-    background-image: url(/img/Shield-logo.png);
+    background-image: url("/img/Shield-logo.png");
     background-position: top;
     background-size: 1150px;
     background-repeat: no-repeat;
     box-shadow: -1em 0 0.75em rgba(255, 255, 255, 0.5), 1em 0 0.75em rgba(255, 255, 255, 0.5);
     min-width: 100%;
 }
+
 .banner {
     background-color: #C11;
     padding: 0.25em 0.5em;
     text-align: center;
 }
 
+.notifier {
+        background-color: #777777;
+        border-radius: 5px;
+        color: #EEEEEE;
+        display: none;
+        font-family: sans-serif;
+        text-align: center;
+        position: fixed;
+        left: 40%;
+        top: 40%;
+        width: 400px;
+        z-index: 2;
+
+        span {
+            font-size: 1.5em;
+            padding: 1em;
+        }
+
+        .title-section {
+            background-color: #333333;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            font-size: 2em;
+            overflow: auto;
+            padding: 10px 20px;
+            text-align: left;
+            span {
+              float: left;
+              padding: 0;
+            }
+        }
+
+        .close-button {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: #EEE;
+            float: right;
+            font-size: 1em;
+        }
+
+        .close-button:hover {
+            background-color: #555;
+        }
+
+}
+
 .button {
-  color: #444;
-  background-color: #DDD;
-  border: none;
-  border-radius: 25px;
-  font-size: 1.5em;
-  padding: .5em 1em;
-  text-align: center;
+    color: #444;
+    background-color: #DDD;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
 }
 
 .button:hover {
-  background-color: #CCC;
+    background-color: #CCC;
 }
 
 .button:focus {
-  outline:0;
+    outline: 0;
 }
 
 .favorites-button {
-  padding: .5em .79em;
+    padding: 0.5em 0.79em;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .list-styling {
     min-height: 300px;
     background-color: #555;
     padding: 2em;
+
     li {
         background-color: #777;
         font-size: 30px;
@@ -75,12 +129,8 @@ footer {
     }
 }
 
-.success-message {
-  display: none;
-}
-
 #input-container {
-  padding: 2em;
+    padding: 2em;
 
     #query-box {
         background-color: transparent;
@@ -94,65 +144,69 @@ footer {
     }
 
     #character-summary {
-      overflow: auto;
-      padding: 2em;
-      width: 100%;
+        overflow: auto;
+        padding: 2em;
+        width: 100%;
 
-      #character-image-card {
-        float: left;
-        .image-container {
-          text-align: left;
-          max-width: 30%;
-          padding-right: 1em;
+        #character-image-card {
+            float: left;
+
+            .image-container {
+                text-align: left;
+                max-width: 30%;
+                padding-right: 1em;
+            }
         }
-      }
-      .details-container {
-        float: left;
-        font-size: 2em;
-        padding-right: 0;
-        padding: 1em;
-        max-width: 70%;
-      }
+
+        .details-container {
+            float: left;
+            font-size: 2em;
+            padding: 1em;
+            max-width: 70%;
+        }
+    }
+}
+
+#results {
+    overflow: auto;
+
+    .favs-button {
+        float: right;
+        margin-right: 1em;
+        margin-top: 1em;
     }
 
-}
-#results {
-  overflow: auto;
-  .favs-button {
-    float: right;
-    margin-right: 1em;
-    margin-top: 1em;
-  }
-  h2 {
-    @extend .banner;
-    background-color: #EEE;
-    color: #222;
-    font-size: 2em;
-    font-weight: 400;
-  }
-
+    h2 {
+        @extend .banner;
+        background-color: #EEE;
+        color: #222;
+        font-size: 2em;
+        font-weight: 400;
+    }
 }
 
 .favorites-view {
-
-  .search-return {
-    margin: 1em;
-  }
-  .favorites-list {
-    background: transparent;
-    li {
-      padding: 0;
-      font-size: 50px;
-      img {
-        padding-right: .5em;
-        vertical-align: middle;
-      }
-      span {
-        display: inline-block;
-        line-height: normal;
-        vertical-align: middle;
-      }
+    .search-return {
+        margin: 1em;
     }
 
-  }
+    .favorites-list {
+        background: transparent;
+
+        li {
+            padding: 0;
+            font-size: 50px;
+
+            img {
+                padding-right: 0.5em;
+                vertical-align: middle;
+            }
+
+            span {
+                display: inline-block;
+                line-height: normal;
+                vertical-align: middle;
+            }
+        }
+    }
 }
