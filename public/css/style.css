@@ -91,9 +91,10 @@ footer {
   color: #EEEEEE;
   display: none;
   font-family: sans-serif;
-  text-align: center;
+  padding-bottom: 1em;
   position: fixed;
   left: 40%;
+  text-align: center;
   top: 40%;
   width: 400px;
   z-index: 2; }
@@ -105,6 +106,7 @@ footer {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     font-size: 2em;
+    margin-bottom: .5em;
     overflow: auto;
     padding: 10px 20px;
     text-align: left; }
@@ -120,6 +122,8 @@ footer {
     font-size: 1em; }
   .notifier .close-button:hover {
     background-color: #555; }
+  .notifier .close-button:focus {
+    outline: 0; }
 
 .button {
   color: #444;
