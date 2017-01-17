@@ -200,18 +200,19 @@ footer {
     font-size: 2em;
     font-weight: 400; }
 
-.favorites-view .search-return {
-  margin: 1em; }
-
-.favorites-view .favorites-list {
-  background: transparent; }
-  .favorites-view .favorites-list li {
-    padding: 0;
-    font-size: 50px; }
-    .favorites-view .favorites-list li img {
-      padding-right: 0.5em;
-      vertical-align: middle; }
-    .favorites-view .favorites-list li span {
-      display: inline-block;
-      line-height: normal;
-      vertical-align: middle; }
+.favorites-view {
+  min-height: 576px; }
+  .favorites-view .search-return {
+    margin: 1em; }
+  .favorites-view .favorites-list {
+    background: transparent; }
+    .favorites-view .favorites-list li {
+      padding: 0;
+      font-size: 50px; }
+      .favorites-view .favorites-list li img {
+        padding-right: 0.5em;
+        vertical-align: middle; }
+      .favorites-view .favorites-list li span {
+        display: inline-block;
+        line-height: normal;
+        vertical-align: middle; }
