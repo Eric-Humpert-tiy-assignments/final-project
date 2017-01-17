@@ -124,6 +124,8 @@ footer {
     background-color: #555; }
   .notifier .close-button:focus {
     outline: 0; }
+  .notifier .close-button:active {
+    background-color: #111; }
 
 .button {
   color: #444;
@@ -139,6 +141,9 @@ footer {
 
 .button:focus {
   outline: 0; }
+
+.button:active {
+  background-color: #777; }
 
 .favorites-button {
   padding: 0.5em 0.79em; }
