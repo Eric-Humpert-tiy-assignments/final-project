@@ -37,7 +37,7 @@ if (window.comicSearch === undefined) {
                 var codeFriendlyinput = encodeURIComponent(charName);
                 //ajax request variable
                 var result = $.ajax({
-                    url: "http://gateway.marvel.com:80/v1/public/characters?name=" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339",
+                    url: "https://gateway.marvel.com/v1/public/characters?name=" + codeFriendlyinput + "&apikey=1103dc5941f198d7daedd7998113e339",
                 });
                 $("#query-box").val('');
                 //when the data request finishes a console log to display the resulting comic data
