@@ -33,7 +33,6 @@ footer {
     background-position: top;
     background-size: 1150px;
     background-repeat: no-repeat;
-    box-shadow: -1em 0 0.75em rgba(255, 255, 255, 0.5), 1em 0 0.75em rgba(255, 255, 255, 0.5);
     min-width: 100%;
 }
 
@@ -77,27 +76,32 @@ footer {
             }
         }
 
-        .close-button {
-            background-color: #333;
-            border: none;
-            border-radius: 5px;
-            color: #EEE;
-            float: right;
-            font-size: 1em;
-        }
+}
 
-        .close-button:hover {
-            background-color: #555;
-        }
+.close-button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #EEE;
+    float: right;
+    font-size: 1em;
+}
 
-        .close-button:focus {
-          outline: 0;
-        }
+.close-button:hover {
+    background-color: #555;
+}
 
-        .close-button:active {
-          background-color: #111;
-        }
+.close-button:focus {
+  outline: 0;
+}
 
+.close-button:active {
+  background-color: #111;
+}
+
+.list-button {
+  background-color: #777;
+  margin-top: 5px;
 }
 
 .button {
