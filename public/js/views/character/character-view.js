@@ -8,6 +8,15 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     template: _.template($('#character-template').html()),
 
+    events: {
+      "click .list-button": "deleteFavorite"
+    },
+
+    deleteFavorite: function(evt) {
+        console.log("click test", this.model.get("characterId"));
+        this.model.destroy({wait: true});
+    },
+
     render() {
       // console.log("this check:", this, this.model.get("characterId"));
       var data = this.serializeData();

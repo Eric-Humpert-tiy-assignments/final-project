@@ -6,24 +6,20 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 
     initialize: function() {
       this.charactersList = new context.CharactersList({ el: '.favorites-list', collection: this.collection});
-      // this.collection.fetch({remove: false});
-      // this.listenTo(this.charactersList, 'add', this.render());
     },
 
     events: {
-      "click .search-return": "goToSearch",
+      "click .search-return": "goToSearch"
     },
 
     goToSearch: function() {
-      console.log("You clicked search return");
+      // console.log("You clicked search return");
       context.routes.navigate("search", { trigger: true });
     },
 
     render: function() {
-      // console.log("Favorites View render");
-      console.log("fetching the latest collection!");
-      this.collection.fetch().done(console.log("collection has been fetched!"));
-      // this.charactersList.render();
+      console.log("Favorites View render");
+      this.charactersList.render();
     },
 
     show: function() {

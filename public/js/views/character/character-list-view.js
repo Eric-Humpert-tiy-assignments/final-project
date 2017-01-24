@@ -13,17 +13,15 @@ if (window.comicSearch === undefined) {
         },
 
         modelAdded(model) {
-            console.log("added a model!");
+            // console.log("added a model!", model);
             var view = this.renderModel(model);
             this.$el.append(view.$el);
         },
 
         render() {
             // console.log("Character List View Render!");
-            // this.$el.empty();
             var html = this.collection.map(model => {
                 var view = this.renderModel(model);
-                // view.render();
                 return view.$el;
             })
             this.$el.html(html);

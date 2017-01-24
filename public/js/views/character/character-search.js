@@ -80,7 +80,7 @@ if (window.comicSearch === undefined) {
         },
 
         goToFavorites: function(evt) {
-            console.log("click favorites");
+            // console.log("click favorites");
             context.routes.navigate("favorites", {
                 trigger: true
             });
@@ -91,9 +91,9 @@ if (window.comicSearch === undefined) {
             var isValidSave = modelsList.find(function(item) {
                 return item.get("characterId") === searchModel.get("characterId");
             });
-            console.log("what is isValidSave at this point? ", isValidSave);
+            // console.log("what is isValidSave at this point? ", isValidSave);
             if (isValidSave === undefined) {
-                console.log("a new model was saved");
+                // console.log("a new model was saved", searchModel);
                 searchModel.save();
                 modelsList.add(searchModel);
 
