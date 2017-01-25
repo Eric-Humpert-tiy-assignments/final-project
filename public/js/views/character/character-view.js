@@ -12,9 +12,9 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
       "click .list-button": "deleteFavorite"
     },
 
-    deleteFavorite: function(evt) {
+    deleteFavorite: function(model) {
         console.log("click test", this.model.get("characterId"));
-        this.model.destroy({wait: true});
+        this.model.destroy();
     },
 
     render() {
