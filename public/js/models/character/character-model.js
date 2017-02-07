@@ -3,7 +3,7 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
 (function(context) {
 
     var CharacterModel = Backbone.Model.extend({
-      url: "/api/favorites",
+      urlRoot: "/api/favorites",
 
       defaults: {
         characterId: 0,

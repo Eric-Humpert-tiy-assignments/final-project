@@ -6,8 +6,6 @@ if (window.comicSearch === undefined) {
 
     var CharacterSearch = Backbone.View.extend({
 
-
-
         tagName: "ul",
 
         //Event pair declaration
@@ -94,7 +92,9 @@ if (window.comicSearch === undefined) {
             // console.log("what is isValidSave at this point? ", isValidSave);
             if (isValidSave === undefined) {
                 // console.log("a new model was saved", searchModel);
-                searchModel.save();
+                searchModel.save({}, {success: function() {
+                  console.log("Save fired!", arguments);
+                }});
                 modelsList.add(searchModel);
 
                 $(".notifier").show();

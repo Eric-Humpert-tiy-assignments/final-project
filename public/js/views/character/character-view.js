@@ -13,7 +13,10 @@ if (window.comicSearch === undefined) { window.comicSearch = {}; }
     },
 
     deleteFavorite: function(model) {
-        console.log("click test", this.model.get("characterId"));
+        var id = this.model.get('id');
+        this.remove();
+        console.log("what's this?", this.model.id);
+        // console.log("click test", this.model.get("characterId"));
         this.model.destroy();
     },
 
